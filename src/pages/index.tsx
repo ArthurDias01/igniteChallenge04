@@ -75,9 +75,11 @@ export default function Home(): JSX.Element {
       <Box maxW={1120} px={20} mx="auto" my={20}>
         <CardList cards={formattedData} />
         {hasNextPage && (
-          <Button type="button" onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-            {isFetchingNextPage ? 'Carregando...' : 'Carregar mais'}
-          </Button>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Button type="button" onClick={() => fetchNextPage()} disabled={isFetchingNextPage} mt='10'>
+              {isFetchingNextPage ? 'Carregando...' : 'Carregar mais'}
+            </Button>
+          </div>
         )}
       </Box>
     </>
